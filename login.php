@@ -76,13 +76,14 @@
             <h2>Login</h2>
             <form action="connectstulogin.php" method="post">
                 <label for="student_username">Username:</label>
-                <input type="text" id="student_username" name="student_username">
-
+                <input type="text" id="student_username" name="student_username"> <!-- Fix name attribute -->
+            
                 <label for="student_password">Password:</label>
-                <input type="password" id="student_password" name="student_password">
-
-                <input type="submit" value="Login">
+                <input type="password" id="student_password" name="student_password"> <!-- Fix name attribute -->
+            
+                <input type="submit" name="login_submit" value="Login"> <!-- Add name attribute -->
             </form>
+
         </div>
 
         <div>
