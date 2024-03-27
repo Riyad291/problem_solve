@@ -39,10 +39,11 @@ function authenticateUser($conn, $username, $password) {
 }
 
 // Check if form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Login'])) {
+// Check if form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login_submit'])) { // Change 'Login' to 'login_submit'
     // Get username and password from form submission
-    $username = $_POST["student_username"];
-    $password = $_POST["student_password"];
+    $username = $_POST["student_username"]; // Change 'username' to 'student_username'
+    $password = $_POST["student_password"]; // Change 'password' to 'student_password'
 
     // Authenticate user
     if (authenticateUser($conn, $username, $password)) {
@@ -52,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Login'])) {
         echo "Authentication failed. Invalid username or password.";
     }
 }
+
 
 // Close connection
 $conn->close();
